@@ -17,8 +17,8 @@ def register_admin_handlers(dp: Router):
             orders = []
         if not orders:
             return await message.answer("📭 Нет заказов.")
-        text = "📦 Список заказов:
-"
+        text = "📦 Список заказов:"
+
         for i, o in enumerate(orders, 1):
             text += f"{i}. @{message.from_user.username} — {o['stars']} ⭐\n"
         await message.answer(text)
