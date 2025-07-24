@@ -9,7 +9,6 @@ def register_payment_handlers(dp: Router, config):
         _, stars, price = call.data.split("_")
         user_id = call.from_user.id
         pay_url = create_invoice(user_id, int(stars), int(price))
-        await call.message.answer(f"Перейдите по ссылке и оплатите:"
-{pay_url}")
+        await call.message.answer(f"Перейдите по ссылке и оплатите:{pay_url}")
 
     dp.include_router(router)
